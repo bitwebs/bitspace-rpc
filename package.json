@@ -1,13 +1,13 @@
 {
-  "name": "@hyperspace/rpc",
-  "version": "1.15.1",
-  "description": "Raw RPC layer for Hyperspace",
+  "name": "bitspace-rpc",
+  "version": "1.0.0",
+  "description": "Raw RPC layer for BitSpace",
   "main": "index.js",
   "scripts": {
     "test": "standard",
     "build": "hrpc schema.proto --rpc=index.js --messages=messages.js"
   },
-  "author": "Hypercore Protocol Team",
+  "author": "BitWeb Project Team",
   "license": "MIT",
   "devDependencies": {
     "hrpc": "^2.1.1",
@@ -18,16 +18,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hyperspace-org/rpc.git"
+    "url": "git+https://github.com/bitweb/bitspace-rpc.git"
   },
   "keywords": [
-    "hyperspace",
+    "bitspace",
     "rpc",
     "raw",
     "hrpc"
   ],
   "bugs": {
-    "url": "https://github.com/hyperspace-org/rpc/issues"
+    "url": "https://github.com/bitwebs/bitspace-rpc/issues"
   },
-  "homepage": "https://github.com/hyperspace-org/rpc#readme"
+  "homepage": "https://github.com/bitwebs/bitspace-rpc#readme"
 }

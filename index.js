@@ -55,7 +55,7 @@ class HRPCServiceHyperspace {
   }
 }
 
-class HRPCServiceCorestore {
+class HRPCServiceChainstore {
   constructor (rpc) {
     const service = rpc.defineService({ id: 2 })
 
@@ -94,7 +94,7 @@ class HRPCServiceCorestore {
   }
 }
 
-class HRPCServiceHypercore {
+class HRPCServiceUnichain {
   constructor (rpc) {
     const service = rpc.defineService({ id: 3 })
 
@@ -684,9 +684,9 @@ module.exports = class HRPCSession extends HRPC {
       if ((err !== this.rawSocketError && !isStreamError(err)) || this.listenerCount('error')) this.emit('error', err)
     })
 
-    this.hyperspace = new HRPCServiceHyperspace(rpc)
-    this.corestore = new HRPCServiceCorestore(rpc)
-    this.hypercore = new HRPCServiceHypercore(rpc)
+    this.bitspace = new HRPCServiceBitspace(rpc)
+    this.chainstore = new HRPCServiceChainstore(rpc)
+    this.unichain = new HRPCServiceUnichain(rpc)
     this.network = new HRPCServiceNetwork(rpc)
   }
 

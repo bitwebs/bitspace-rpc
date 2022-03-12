@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package hyperspace;
+package bitspace;
 import "hrpc.proto";
 
 // General Structs
@@ -10,15 +10,15 @@ message Peer {
   required string type = 3;
 }
 
-// Hyperspace Methods
-message HyperspaceStatusResponse {
+// Bitspace Methods
+message BitspaceStatusResponse {
   required string apiVersion = 1;
   optional bool holepunchable = 2;
   optional string remoteAddress = 3;
   optional string version = 4;
 }
 
-// Corestore Methods
+// Chainstore Methods
 
 message OpenRequest {
   required uint32 id = 1;
@@ -36,7 +36,7 @@ message OpenResponse {
   optional bytes discoveryKey = 6;
 }
 
-// Corestore Events
+// Chainstore Events
 
 message FeedEvent {
   required bytes key = 1;
@@ -87,7 +87,7 @@ message NetworkExtensionMessage {
   required bytes data = 4;
 }
 
-// Hypercore Methods
+// Unichain Methods
 
 message CloseRequest {
   required uint32 id = 1;
@@ -155,7 +155,7 @@ message DownloadRequest {
   optional uint64 end = 4;
   repeated uint64 blocks = 5;
   optional bool linear = 6;
-  optional bool live = 7; // ie no end (end = -1 in the hypercore api)
+  optional bool live = 7; // ie no end (end = -1 in the unichain api)
 }
 
 message DownloadedRequest {
@@ -193,7 +193,7 @@ message UnwatchUploadsRequest {
   required uint64 id = 1;
 }
 
-// Hypercore Events
+// Unichain Events
 
 message AppendEvent {
   required uint64 id = 1;
@@ -248,15 +248,15 @@ message ExtensionMessage {
   required bytes data = 4;
 }
 
-service Hyperspace {
+service Bitspace {
   option (hrpc.service) = 1;
 
   // Methods
-  rpc Status (hrpc.Void) returns (HyperspaceStatusResponse) { option (hrpc.method) = 1; }
+  rpc Status (hrpc.Void) returns (BitspaceStatusResponse) { option (hrpc.method) = 1; }
   rpc Stop (hrpc.Void) returns (hrpc.Void) { option (hrpc.method) = 2; }
 }
 
-service Corestore {
+service Chainstore {
   option (hrpc.service) = 2;
 
    // Methods
@@ -266,7 +266,7 @@ service Corestore {
   rpc OnFeed (FeedEvent) returns (hrpc.Void)  { option (hrpc.method) = 2; }
 }
 
-service Hypercore {
+service Unichain {
   option (hrpc.service) = 3;
 
    // Methods

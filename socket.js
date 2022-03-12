@@ -1,7 +1,7 @@
 const os = require('os')
 
 function getSocketPath (name) {
-  name = name || process.env.HYPERSPACE_SOCKET || 'hyperspace'
+  name = name || process.env.BITSPACE_SOCKET || 'bitspace'
   return os.platform() !== 'win32' ? `${os.tmpdir()}/${name}.sock` : `\\\\.\\pipe\\${name}`
 }
 

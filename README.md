@@ -1,9 +1,9 @@
-# @hyperspace/rpc
+# bitspace-rpc
 
-The raw hrpc layer for Hyperspace
+The raw hrpc layer for BitSpace
 
 ```
-npm install @hyperspace/rpc
+npm install bitspace-rpc
 ```
 
 # License
