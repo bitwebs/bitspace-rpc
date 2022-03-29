@@ -16,14 +16,14 @@ const errorEncoding = {
   }
 }
 
-class HRPCServiceHyperspace {
+class HRPCServiceBitspace {
   constructor (rpc) {
     const service = rpc.defineService({ id: 1 })
 
     this._status = service.defineMethod({
       id: 1,
       requestEncoding: RPC.NULL,
-      responseEncoding: messages.HyperspaceStatusResponse
+      responseEncoding: messages.BitspaceStatusResponse
     })
 
     this._stop = service.defineMethod({
